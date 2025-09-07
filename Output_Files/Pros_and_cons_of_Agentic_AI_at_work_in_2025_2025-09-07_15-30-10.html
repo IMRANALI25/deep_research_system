@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Research Report: Pros and Cons of Agentic AI at Work in 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --background-light: #f8f9fa;
+            --text-dark: #343a40;
+            --text-light: #ffffff;
+            --heading-color1: #0056b3;
+            --heading-color2: #007bff;
+            --heading-color3: #17a2b8;
+            --heading-color4: #28a745;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 40px 0;
+            margin-bottom: 20px;
+            background-color: var(--text-light);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            opacity: 0; /* For lazy loading */
+            transform: translateY(20px); /* For lazy loading animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 5px solid;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        h1 {
+            color: var(--heading-color1);
+            border-color: var(--heading-color1);
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: var(--heading-color2);
+            border-color: var(--heading-color2);
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: var(--heading-color3);
+            border-color: var(--heading-color3);
+            font-size: 1.5em;
+        }
+
+        h4 {
+            color: var(--heading-color4);
+            border-color: var(--heading-color4);
+            font-size: 1.2em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            padding: 0 20px;
+            text-align: justify;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 0 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+
+        table {
+            width: calc(100% - 40px);
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            border-radius: 8px;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .animation-placeholder {
+            background-color: #e0f7fa;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #00796b;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px var(--shadow-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            h4 {
+                font-size: 1.1em;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+
+        .animated-text span {
+            opacity: 0;
+            animation: textFadeIn 0.8s forwards;
+            display: inline-block;
+        }
+
+        @keyframes textFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stagger animation for text */
+        .animated-text span:nth-child(1) { animation-delay: 0.1s; }
+        .animated-text span:nth-child(2) { animation-delay: 0.2s; }
+        .animated-text span:nth-child(3) { animation-delay: 0.3s; }
+        .animated-text span:nth-child(4) { animation-delay: 0.4s; }
+        .animated-text span:nth-child(5) { animation-delay: 0.5s; }
+        .animated-text span:nth-child(6) { animation-delay: 0.6s; }
+        .animated-text span:nth-child(7) { animation-delay: 0.7s; }
+        .animated-text span:nth-child(8) { animation-delay: 0.8s; }
+        .animated-text span:nth-child(9) { animation-delay: 0.9s; }
+        .animated-text span:nth-child(10) { animation-delay: 1.0s; }
+        /* ... add more as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deep Research Report: Pros and Cons of Agentic AI at Work in 2025</h1>
+            <p>Generated on <span id="currentDateHeader"></span> at <span id="currentTimeHeader"></span></p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#pros">Pros of Agentic AI</a></li>
+                <li><a href="#cons">Cons of Agentic AI</a></li>
+                <li><a href="#comparison">Comparative Analysis</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="introduction">
+            <h2>Introduction to Agentic AI</h2>
+            <p class="animated-text">
+                <span>Agentic</span> <span>AI,</span> <span>also</span> <span>known</span> <span>as</span> <span>AI</span> <span>agents,</span> <span>represents</span> <span>a</span> <span>significant</span> <span>evolution</span> <span>in</span> <span>artificial</span> <span>intelligence.</span> <span>Unlike</span> <span>traditional</span> <span>AI</span> <span>systems</span> <span>that</span> <span>execute</span> <span>pre-defined</span> <span>tasks,</span> <span>agentic</span> <span>AI</span> <span>systems</span> <span>are</span> <span>designed</span> <span>to</span> <span>understand</span> <span>complex</span> <span>goals,</span> <span>plan</span> <span>sequences</span> <span>of</span> <span>actions,</span> <span>execute</span> <span>them,</span> <span>and</span> <span>even</span> <span>self-correct</span> <span>based</span> <span>on</span> <span>feedback</span> <span>and</span> <span>environmental</span> <span>changes.</span> <span>They</span> <span>possess</span> <span>a</span> <span>degree</span> <span>of</span> <span>autonomy,</span> <span>allowing</span> <span>them</span> <span>to</span> <span>make</span> <span>decisions</span> <span>and</span> <span>adapt</span> <span>to</span> <span>unforeseen</span> <span>circumstances.</span> <span>As</span> <span>we</span> <span>approach</span> <span>2025,</span> <span>the</span> <span>integration</span> <span>of</span> <span>agentic</span> <span>AI</span> <span>into</span> <span>various</span> <span>work</span> <span>environments</span> <span>is</span> <span>poised</span> <span>to</span> <span>bring</span> <span>about</span> <span>transformative</span> <span>changes,</span> <span>presenting</span> <span>both</span> <span>promising</span> <span>opportunities</span> <span>and</span> <span>formidable</span> <span>challenges.</span>
+            </p>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Agentic+AI+at+Work" alt="Agentic AI at Work">
+                <p style="font-size: 0.9em; color: var(--secondary-color);"><i>Fig 1.1: Conceptual representation of Agentic AI operating in a professional setting.</i></p>
+            </div>
+            <h3>SubHeading LEVEL 1.1: Defining Agentic AI in the Workplace Context</h3>
+            <p>
+                In the context of work, agentic AI refers to intelligent systems that can perform a series of actions to achieve a high-level objective with minimal human intervention. This includes tasks like automating entire workflows, managing complex projects, performing advanced data analysis, and even interacting with other systems or humans to gather information or delegate sub-tasks. Their ability to reason, plan, and execute makes them more than just automation tools; they are proactive collaborators.
+            </p>
+            <h4>SubHeading LEVEL 1.1.1: Key Characteristics of Agentic AI</h4>
+            <p>
+                Agentic AI systems are characterized by:
+                <ul>
+                    <li><strong>Autonomy:</strong> Ability to operate independently for extended periods.</li>
+                    <li><strong>Goal-Oriented:</strong> Designed to achieve specific, often complex, objectives.</li>
+                    <li><strong>Perception:</strong> Capability to interpret environmental data.</li>
+                    <li><strong>Reasoning:</strong> Power to process information and make decisions.</li>
+                    <li><strong>Learning:</strong> Capacity to improve performance over time through experience.</li>
+                    <li><strong>Proactiveness:</strong> Initiating actions without explicit human command.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="pros">
+            <h2>Pros of Agentic AI at Work in 2025</h2>
+            <p>
+                The adoption of agentic AI in the workplace by 2025 is expected to usher in a new era of productivity, innovation, and operational efficiency. These systems offer several compelling advantages that could redefine how businesses operate and how employees engage with their work.
+            </p>
+
+            <h3>SubHeading LEVEL 2.1: Enhanced Productivity and Efficiency</h3>
+            <p>
+                Agentic AI can automate multi-step, complex processes that currently require significant human oversight. This leads to faster task completion, reduced errors, and a dramatic increase in overall operational efficiency.
+            </p>
+            <h4>SubHeading LEVEL 2.1.1: Automation of Complex Workflows</h4>
+            <p>
+                From supply chain optimization to advanced customer service, agentic AI can manage intricate workflows, orchestrating various tools and data sources seamlessly. This frees up human employees from repetitive and time-consuming tasks, allowing them to focus on more strategic and creative endeavors.
+            </p>
+            <h4>SubHeading LEVEL 2.1.2: 24/7 Operations and Scalability</h4>
+            <p>
+                Unlike human workers, AI agents can operate continuously without breaks, holidays, or fatigue. This enables businesses to achieve 24/7 operational capabilities, especially in global markets, and easily scale operations up or down based on demand.
+            </p>
+
+            <h3>SubHeading LEVEL 2.2: Innovation and Problem Solving</h3>
+            <p>
+                With their advanced analytical capabilities and ability to process vast amounts of data, agentic AI can identify patterns, predict outcomes, and even propose novel solutions to complex business problems that might elude human analysis.
+            </p>
+            <h4>SubHeading LEVEL 2.2.1: Advanced Data Analysis and Insights</h4>
+            <p>
+                Agentic AI can delve into massive datasets, uncovering deep insights and trends much faster and more accurately than human analysts. This can inform strategic decision-making, product development, and market positioning.
+            </p>
+            <h4>SubHeading LEVEL 2.2.2: Accelerated Research and Development</h4>
+            <p>
+                In R&D, AI agents can simulate experiments, analyze research papers, and even design new compounds or algorithms, significantly shortening the innovation cycle and accelerating breakthroughs in various fields.
+            </p>
+
+            <h3>SubHeading LEVEL 2.3: Improved Decision Making</h3>
+            <p>
+                By providing real-time data analysis and predictive modeling, agentic AI can empower human decision-makers with more accurate, comprehensive, and timely information, leading to better strategic outcomes.
+            </p>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x350?text=AI+Boosting+Productivity" alt="AI Boosting Productivity">
+                <p style="font-size: 0.9em; color: var(--secondary-color);"><i>Fig 2.1: Diagram illustrating how Agentic AI enhances productivity across different sectors.</i></p>
+            </div>
+        </section>
+
+        <section id="cons">
+            <h2>Cons of Agentic AI at Work in 2025</h2>
+            <p>
+                Despite the immense potential, the widespread adoption of agentic AI also brings a host of challenges and concerns that need careful consideration. These range from ethical dilemmas and job displacement to security risks and the complexities of integration.
+            </p>
+
+            <h3>SubHeading LEVEL 3.1: Job Displacement and Workforce Transformation</h3>
+            <p>
+                One of the most significant concerns is the potential for agentic AI to automate tasks currently performed by humans, leading to job losses and a need for significant workforce retraining and adaptation.
+            </p>
+            <h4>SubHeading LEVEL 3.1.1: Automation of Cognitive and Manual Tasks</h4>
+            <p>
+                As AI agents become more sophisticated, they will be capable of performing not just repetitive manual tasks but also cognitive tasks such as analysis, report generation, and even some aspects of creative work, impacting a broader range of professions.
+            </p>
+            <h4>SubHeading LEVEL 3.1.2: The Need for Reskilling and Upskilling</h4>
+            <p>
+                To remain relevant, a significant portion of the workforce will need to acquire new skills, focusing on areas where human unique attributes (creativity, emotional intelligence, complex problem-solving, ethical reasoning) complement AI capabilities.
+            </p>
+
+            <h3>SubHeading LEVEL 3.2: Ethical and Societal Concerns</h3>
+            <p>
+                The autonomous nature of agentic AI raises profound ethical questions regarding accountability, bias, and control.
+            </p>
+            <h4>SubHeading LEVEL 3.2.1: Accountability and Decision-Making Transparency</h4>
+            <p>
+                When an AI agent makes a mistake or causes harm, determining who is accountable (the developer, the deployer, or the AI itself) becomes a complex legal and ethical challenge. The "black box" nature of some advanced AI models also makes their decision-making process difficult to understand or audit.
+            </p>
+            <h4>SubHeading LEVEL 3.2.2: Bias and Fairness</h4>
+            <p>
+                If trained on biased data, agentic AI can perpetuate and even amplify existing societal biases, leading to unfair or discriminatory outcomes in areas like hiring, lending, or legal judgments.
+            </p>
+
+            <h3>SubHeading LEVEL 3.3: Security Risks and System Vulnerabilities</h3>
+            <p>
+                The increased autonomy and interconnectedness of agentic AI systems introduce new vectors for cyberattacks and system failures.
+            </p>
+            <h4>SubHeading LEVEL 3.3.1: New Attack Surfaces</h4>
+            <p>
+                Autonomous agents, especially those with access to sensitive data or control over critical infrastructure, become prime targets for malicious actors, potentially leading to data breaches, operational disruptions, or even physical harm.
+            </p>
+            <h4>SubHeading LEVEL 3.3.2: Complexity of System Management</h4>
+            <p>
+                Managing and monitoring a fleet of autonomous AI agents requires sophisticated tools and expertise. Debugging and understanding failures in highly complex, self-modifying systems can be extremely challenging.
+            </p>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x350?text=Challenges+of+Agentic+AI" alt="Challenges of Agentic AI">
+                <p style="font-size: 0.9em; color: var(--secondary-color);"><i>Fig 3.1: Visual representation of the ethical and security challenges posed by Agentic AI.</i></p>
+            </div>
+        </section>
+
+        <section id="comparison">
+            <h2>Comparative Analysis: Pros vs. Cons</h2>
+            <p>
+                To fully understand the impact of Agentic AI, it's crucial to weigh its advantages against its disadvantages. The following table provides a concise comparison.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Pros of Agentic AI</th>
+                        <th>Cons of Agentic AI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Productivity & Efficiency</strong></td>
+                        <td>Automates complex workflows, 24/7 operations, increased output, reduced errors.</td>
+                        <td>Potential for over-reliance, system failures can halt operations, high initial implementation cost.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Innovation & Problem Solving</strong></td>
+                        <td>Accelerates R&D, advanced data analysis, novel solution generation, predictive insights.</td>
+                        <td>Lack of true creativity (currently), reliance on existing data, potential for biased solutions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Workforce Impact</strong></td>
+                        <td>Frees humans for strategic tasks, creates new specialized roles (AI trainers, supervisors).</td>
+                        <td>Significant job displacement, need for massive reskilling, widening skill gap.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decision Making</strong></td>
+                        <td>Data-driven, objective decisions, real-time insights, reduced human error.</td>
+                        <td>"Black box" problem, lack of human intuition/empathy, ethical dilemmas in autonomous decisions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security & Ethics</strong></td>
+                        <td>Can enhance cybersecurity (e.g., autonomous threat detection).</td>
+                        <td>New attack vectors, accountability issues, propagation of biases, potential for misuse.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost & Investment</strong></td>
+                        <td>Long-term cost savings through automation, competitive advantage.</td>
+                        <td>High upfront investment, maintenance costs, infrastructure requirements.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="animation-placeholder">
+                <p>
+                    <span class="animated-text">This</span> <span class="animated-text">comparison</span> <span class="animated-text">highlights</span> <span class="animated-text">the</span> <span class="animated-text">dual</span> <span class="animated-text">nature</span> <span class="animated-text">of</span> <span class="animated-text">Agentic</span> <span class="animated-text">AI:</span> <span class="animated-text">a</span> <span class="animated-text">powerful</span> <span class="animated-text">tool</span> <span class="animated-text">for</span> <span class="animated-text">progress,</span> <span class="animated-text">but</span> <span class="animated-text">one</span> <span class="animated-text">that</span> <span class="animated-text">demands</span> <span class="animated-text">careful</span> <span class="animated-text">management</span> <span class="animated-text">and</span> <span class="animated-text">ethical</span> <span class="animated-text">consideration.</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusion and Future Outlook</h2>
+            <p>
+                The advent of agentic AI at work by 2025 represents a pivotal moment in the evolution of the global workforce and economy. While the potential for unprecedented gains in productivity, innovation, and efficiency is undeniable, the challenges associated with job displacement, ethical governance, and cybersecurity are equally significant.
+            </p>
+            <h3>SubHeading LEVEL 4.1: Navigating the Agentic AI Landscape</h3>
+            <p>
+                Successful integration of agentic AI will require a multi-faceted approach involving:
+                <ul>
+                    <li><strong>Proactive Policy Making:</strong> Governments and international bodies must develop regulations that address job security, ethical AI use, and accountability.</li>
+                    <li><strong>Education and Training Initiatives:</strong> Extensive programs for reskilling and upskilling the workforce will be crucial to mitigate job displacement and prepare individuals for new roles.</li>
+                    <li><strong>Ethical AI Development:</strong> Developers must prioritize transparency, fairness, and human-centric design in AI agents.</li>
+                    <li><strong>Robust Cybersecurity Measures:</strong> Strengthening defenses against new AI-driven threats will be paramount.</li>
+                </ul>
+            </p>
+            <h4>SubHeading LEVEL 4.1.1: The Symbiotic Future of Human-AI Collaboration</h4>
+            <p>
+                Ultimately, the most beneficial future will likely involve a symbiotic relationship where humans and agentic AI collaborate, each leveraging their unique strengths. AI agents can handle complex, data-intensive, and repetitive tasks, while humans focus on creativity, critical thinking, emotional intelligence, and strategic oversight. This partnership has the potential to unlock new levels of human potential and solve some of the world's most pressing challenges.
+            </p>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Human-AI+Collaboration+2025" alt="Human-AI Collaboration">
+                <p style="font-size: 0.9em; color: var(--secondary-color);"><i>Fig 4.1: Envisioning a collaborative future between humans and Agentic AI.</i></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Deep Research Assistant. All rights reserved.</p>
+            <p>Report Generated: <span id="currentDateFooter"></span> at <span id="currentTimeFooter"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Get current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+
+            const date = now.toLocaleDateString('en-US', optionsDate);
+            const time = now.toLocaleTimeString('en-US', optionsTime);
+
+            document.getElementById('currentDateHeader').textContent = date;
+            document.getElementById('currentTimeHeader').textContent = time;
+            document.getElementById('currentDateFooter').textContent = date;
+            document.getElementById('currentTimeFooter').textContent = time;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Update every second
+
+        // Lazy Loading / Intersection Observer
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Animated text for intro and placeholder
+            const animatedTexts = document.querySelectorAll('.animated-text');
+            animatedTexts.forEach(textBlock => {
+                const text = textBlock.textContent;
+                textBlock.innerHTML = ''; // Clear original content
+                text.split(' ').forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = word + ' ';
+                    span.style.animationDelay = `${index * 0.05}s`; // Stagger delay
+                    textBlock.appendChild(span);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
